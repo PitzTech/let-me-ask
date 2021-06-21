@@ -94,8 +94,3 @@ Developed with ❤️ by Victor Laurentino do Nascimento 👋🏽 Contact me!
 [![Outlook Badge](https://img.shields.io/badge/-EMail-0078d4?style=flat-square&logo=microsoft-outlook&logoColor=white)](mailto:victorlaurentino7@gmail.com)
 
 </div>
-
----
-
-## :balance_scale: **License**
-
