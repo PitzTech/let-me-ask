@@ -82,7 +82,7 @@ The following tools is used to build this project:
 <div align="center">
 
 <a href="https://github.com/PitzTech">
- <img src="https://github.com/PitzTech.avatar" width="100px;" alt="Profile Photo PitzTech Victor Laurentino do Nascimento"/>
+ <img src="https://github.com/PitzTech.png" width="100px;" alt="Profile Photo PitzTech Victor Laurentino do Nascimento"/>
  <br/>
  <sub><b>Victor Laurentino do Nascimento</b></sub>
 </a>
