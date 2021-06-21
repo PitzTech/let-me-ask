@@ -8,15 +8,6 @@
 </p>
 
 <p align="center">
-  <img alt="Repository Size" src="https://img.shields.io/github/repo-size/lucasyule2212/NLW-LetMeAsk?color=3498db&style=for-the-badge">
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lucasyule2212/NLW-LetMeAsk?color=3498db&style=for-the-badge">
-  <a href="https://github.com/USERNAME">
-    <img alt="Developed by Lucas Yule" src="https://img.shields.io/badge/Developer-Lucas_Yule-%3498db?color=3498db&style=for-the-badge">
-  </a>
-  <img alt="Project License" src="https://img.shields.io/github/license/lucasyule2212/NLW-LetMeAsk?color=3498db&style=for-the-badge"/>
-</p>
-
-<p align="center">
  <a href="#eye_speech_bubble-preview">Preview</a> •
  <a href="#information_source-about">About</a> •
  <a href="#arrow_forward-run">Run</a> •
@@ -67,7 +58,7 @@
 
 ## :arrow_forward: **Run**
 
-To run the project you need to clone or [`download`](https://github.com/lucasyule2212/NLW-LetMeAsk/archive/main.zip) this repository, have the Node Package Manager ([`NPM`](https://www.npmjs.com/get-npm)) or the YARN Package Manager installed ([`YARN`](https://yarnpkg.com/getting-started)).
+To run the project you need to clone or [`download`](https://github.com/PitzTech/let-me-ask/archive/main.zip) this repository, have the Node Package Manager ([`NPM`](https://www.npmjs.com/get-npm)) or the YARN Package Manager installed ([`YARN`](https://yarnpkg.com/getting-started)).
 
 ---
 
@@ -90,17 +81,17 @@ The following tools is used to build this project:
 
 <div align="center">
 
-<a href="https://github.com/lucasyule2212">
- <img src="https://avatars1.githubusercontent.com/u/9919?s=200&v=4" width="100px;" alt="Profile Photo LUCAS YULE"/>
+<a href="https://github.com/PitzTech">
+ <img src="https://github.com/PitzTech.avatar" width="100px;" alt="Profile Photo PitzTech Victor Laurentino do Nascimento"/>
  <br/>
- <sub><b>Lucas Yule</b></sub>
+ <sub><b>Victor Laurentino do Nascimento</b></sub>
 </a>
 
-Developed with ❤️ by Lucas Yule 👋🏽 Contact me!
+Developed with ❤️ by Victor Laurentino do Nascimento 👋🏽 Contact me!
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/lucasyulerocha)
-[![Github Badge](https://img.shields.io/badge/-GitHub-000?style=flat-square&logo=Github&logoColor=white)](https://github.com/lucasyule2212)
-[![Outlook Badge](https://img.shields.io/badge/-EMail-0078d4?style=flat-square&logo=microsoft-outlook&logoColor=white)](mailto:lyrma@cin.ufpe.br)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/victor-laurentino-do-nascimento/)
+[![Github Badge](https://img.shields.io/badge/-GitHub-000?style=flat-square&logo=Github&logoColor=white)](https://github.com/PitzTech)
+[![Outlook Badge](https://img.shields.io/badge/-EMail-0078d4?style=flat-square&logo=microsoft-outlook&logoColor=white)](mailto:victorlaurentino7@gmail.com)
 
 </div>
 
@@ -110,6 +101,6 @@ Developed with ❤️ by Lucas Yule 👋🏽 Contact me!
 
 <div align="center">
 
-Copyright © 2021 [Lucas Yule](https://github.com/lucasyule2212).<br />
+Copyright © 2021 [PitzTech](https://github.com/PitzTech).<br />
 
 </div>
