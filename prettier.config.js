@@ -6,6 +6,6 @@ module.exports = {
 	printWidth: 90,
 	trailingComma: "none",
 	proseWrap: "preserve",
-	jsxBracketSameLine: false,
+	jsxBracketSameLine: false
 	//bracketSpacing: false,
-};
+}
