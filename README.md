@@ -99,8 +99,3 @@ Developed with ❤️ by Victor Laurentino do Nascimento 👋🏽 Contact me!
 
 ## :balance_scale: **License**
 
-<div align="center">
-
-Copyright © 2021 [PitzTech](https://github.com/PitzTech).<br />
-
-</div>
