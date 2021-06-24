@@ -1,14 +1,29 @@
-import React from "react"
+import React, { useContext } from "react"
+import { useHistory } from "react-router-dom"
+import { auth, firebase } from "../services/firebase"
 
 import illustrationImg from "../assets/images/illustration.svg"
 import logoImg from "../assets/images/logo.svg"
 import googleIconImg from "../assets/images/google-icon.svg"
+
+import { TestContext } from "../App"
 
 import { Button } from "../components/Button"
 
 import "../styles/auth.scss"
 
 export function Home(): JSX.Element {
+	const history = useHistory()
+	const value = useContext(TestContext)
+
+	function handleCreateRoom(): void {
+		const provider = new firebase.auth.GoogleAuthProvider()
+
+		auth.signInWithPopup(provider).then(result => {
+			history.push("/rooms/new")
+		})
+	}
+
 	return (
 		<div id="page-auth">
 			<aside>
@@ -20,9 +35,10 @@ export function Home(): JSX.Element {
 				<p>Tire as dúvidas da sua audiência em tempo real</p>
 			</aside>
 			<main>
+				<h1>{value}</h1>
 				<div className="main-content">
 					<img src={logoImg} alt="Let me ask logo" />
-					<button className="create-room">
+					<button onClick={handleCreateRoom} className="create-room">
 						<img src={googleIconImg} alt="Logo do Google" />
 						Crie sua sala com o google
 					</button>
