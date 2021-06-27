@@ -1,5 +1,8 @@
-import React, { useState, ChangeEvent, FormEvent } from "react"
+import React, { useEffect, useState, ChangeEvent, FormEvent } from "react"
 import { useParams } from "react-router"
+
+import { useAuth } from "../hooks/useAuth"
+import { database } from "../services/firebase"
 
 import logoImg from "../assets/images/logo.svg"
 
@@ -8,8 +11,18 @@ import { RoomCode } from "./RoomCode"
 
 import "../styles/room.scss"
 
-import { useAuth } from "../hooks/useAuth"
-import { database } from "../services/firebase"
+type FirebaseQuestions = Record<
+	string,
+	{
+		author: {
+			name: string
+			avatar: string
+		}
+		content: string
+		isAnswered: boolean
+		isHighlighted: boolean
+	}
+>
 
 type RoomParams = {
 	id: string
@@ -20,6 +33,28 @@ export function Room(): JSX.Element {
 	const params = useParams<RoomParams>()
 	const roomId = params.id
 	const [newQuestion, setNewQuestion] = useState("")
+	const [questions, setQuestions] = useState([])
+
+	useEffect(() => {
+		const roomRef = database.ref(`rooms/${roomId}`)
+
+		roomRef.once("value", room => {
+			const databaseRoom = room.val()
+			const firebaseQuestions = databaseRoom.questions as FirebaseQuestions
+
+			const parsedQuestions = Object.entries(firebaseQuestions ?? {}).map(
+				([key, value]) => {
+					return {
+						id: key,
+						content: value.content,
+						author: value.author,
+						isHighlighted: value.isHighlighted,
+						isAnswered: value.isAnswered
+					}
+				}
+			)
+		})
+	}, [roomId])
 
 	function handleQuestionChange(event: ChangeEvent<HTMLTextAreaElement>): void {
 		const value = event.target.value
