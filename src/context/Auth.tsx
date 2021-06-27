@@ -27,7 +27,7 @@ export function AuthContextProvider(props: AuthContextProviderProps): JSX.Elemen
 		return () => {
 			unsubscribe()
 		}
-	}, [user])
+	}, [])
 
 	async function signInWithGoogle(): Promise<void> {
 		const provider = new firebase.auth.GoogleAuthProvider()
