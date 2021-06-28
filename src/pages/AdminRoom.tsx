@@ -1,10 +1,9 @@
-import React, { useState, ChangeEvent, FormEvent } from "react"
+import React from "react"
 import { useParams } from "react-router"
 
 import { useRoom } from "../hooks/useRoom"
 
 import { useAuth } from "../hooks/useAuth"
-import { database } from "../services/firebase"
 
 import logoImg from "../assets/images/logo.svg"
 
@@ -22,35 +21,7 @@ export function AdminRoom(): JSX.Element {
 	const { user } = useAuth()
 	const params = useParams<RoomParams>()
 	const roomId = params.id
-	const [newQuestion, setNewQuestion] = useState("")
 	const { title, questions } = useRoom(roomId)
-
-	function handleQuestionChange(event: ChangeEvent<HTMLTextAreaElement>): void {
-		const value = event.target.value
-		setNewQuestion(value)
-	}
-
-	async function handleSendQuestion(event: FormEvent): Promise<void> {
-		event.preventDefault()
-
-		if (newQuestion.trim() === "") return
-
-		if (!user) throw new Error("You must be logged in")
-
-		const question = {
-			content: newQuestion,
-			author: {
-				name: user.name,
-				avatar: user.avatar
-			},
-			isHighlighted: false,
-			isAnswered: false
-		}
-
-		await database.ref(`rooms/${roomId}/questions`).push(question)
-
-		setNewQuestion("")
-	}
 
 	return (
 		<div id="page-room">
