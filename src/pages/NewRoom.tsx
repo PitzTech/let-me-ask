@@ -28,7 +28,7 @@ export function NewRoom(): JSX.Element {
 			authorId: user?.id
 		})
 
-		history.push(`/rooms/${firerebaseRoom.key}`)
+		history.push(`/admin/rooms/${firerebaseRoom.key}`)
 	}
 
 	function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
