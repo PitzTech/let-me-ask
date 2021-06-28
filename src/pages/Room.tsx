@@ -1,28 +1,18 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from "react"
 import { useParams } from "react-router"
 
+import { useRoom } from "../hooks/useRoom"
+
 import { useAuth } from "../hooks/useAuth"
 import { database } from "../services/firebase"
 
 import logoImg from "../assets/images/logo.svg"
 
-import { Button } from "./Button"
-import { RoomCode } from "./RoomCode"
+import { Button } from "../components/Button"
+import { RoomCode } from "../components/RoomCode"
+import { Question } from "../components/Question"
 
 import "../styles/room.scss"
-
-type FirebaseQuestions = Record<
-	string,
-	{
-		author: {
-			name: string
-			avatar: string
-		}
-		content: string
-		isAnswered: boolean
-		isHighlighted: boolean
-	}
->
 
 type RoomParams = {
 	id: string
@@ -33,28 +23,7 @@ export function Room(): JSX.Element {
 	const params = useParams<RoomParams>()
 	const roomId = params.id
 	const [newQuestion, setNewQuestion] = useState("")
-	const [questions, setQuestions] = useState([])
-
-	useEffect(() => {
-		const roomRef = database.ref(`rooms/${roomId}`)
-
-		roomRef.once("value", room => {
-			const databaseRoom = room.val()
-			const firebaseQuestions = databaseRoom.questions as FirebaseQuestions
-
-			const parsedQuestions = Object.entries(firebaseQuestions ?? {}).map(
-				([key, value]) => {
-					return {
-						id: key,
-						content: value.content,
-						author: value.author,
-						isHighlighted: value.isHighlighted,
-						isAnswered: value.isAnswered
-					}
-				}
-			)
-		})
-	}, [roomId])
+	const { title, questions } = useRoom(roomId)
 
 	function handleQuestionChange(event: ChangeEvent<HTMLTextAreaElement>): void {
 		const value = event.target.value
@@ -94,8 +63,8 @@ export function Room(): JSX.Element {
 
 			<main>
 				<div className="room-title">
-					<h1>Sala React</h1>
-					<span>4 Perguntas</span>
+					<h1>Sala {title}</h1>
+					{questions.length > 0 && <span>{questions.length} Pergunta(s)</span>}
 				</div>
 
 				<form onSubmit={handleSendQuestion}>
@@ -121,6 +90,16 @@ export function Room(): JSX.Element {
 						</Button>
 					</div>
 				</form>
+
+				<div className="question-list">
+					{questions.map(question => (
+						<Question
+							key={question.id}
+							content={question.content}
+							author={question.author}
+						/>
+					))}
+				</div>
 			</main>
 		</div>
 	)
